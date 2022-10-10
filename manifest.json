@@ -1,0 +1,38 @@
+{
+  "name": "extensão de busca",
+  "description": "scraping!",
+  "version": "1.0",
+  "manifest_version": 3,
+   "permissions": ["activeTab", "scripting", "tabs", "tabGroups", "storage", "contextMenus"],
+   "host_permissions": [
+    "https://developer.chrome.com/*"
+  ],
+ 
+  "background": {
+    "service_worker": "background.js"
+    
+  },
+
+  "content_scripts": [
+    {
+      "matches": [
+        "https://busca.inpi.gov.br/pePI/*",
+        "http://172.19.0.191:8070/IpasWeb/*",
+        "http://172.19.0.192:8070/IpasWeb/*",
+        "http://172.19.0.193:8070/IpasWeb/*",
+        "http://ipasweb.inpi.gov.br/IpasWeb/*",
+		"https://www.lipsum.com/",
+		"file:///C:/Users/kledisom.oliveira/Downloads/ext/index.html",
+		"https://transparencia.cc/dados/inpi/marca/titular/QyZBIEFH/"
+      ],
+      "js": ["inject.js"]
+    }
+  ],
+
+    "icons": {
+    "16": "/images/get_started16.png",
+    "32": "/images/get_started32.png",
+    "48": "/images/get_started48.png",
+    "128": "/images/get_started128.png"
+  }
+}
